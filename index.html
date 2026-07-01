@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhythm Cat — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0d12;
+    --surface: #15151e;
+    --surface2: #1e1e2a;
+    --border: rgba(255,255,255,0.07);
+    --accent: #c084fc;
+    --accent2: #818cf8;
+    --text: #e8e6f0;
+    --muted: #8b85a8;
+    --highlight: rgba(192,132,252,0.08);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background decoration */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(192,132,252,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* Header */
+  header {
+    padding: 60px 0 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 56px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #c084fc, #818cf8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+    color: #fff;
+  }
+
+  .logo-text span {
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .badge {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 4px 12px;
+    text-transform: uppercase;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 56px;
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+  }
+
+  @media (max-width: 520px) {
+    .toc ol { grid-template-columns: 1fr; }
+  }
+
+  .toc li { counter-increment: toc; }
+
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    transition: color 0.2s;
+  }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    min-width: 18px;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  /* Sections */
+  section {
+    margin-bottom: 52px;
+  }
+
+  .section-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 15.5px;
+    margin-bottom: 14px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Info cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+
+  .card-icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .card-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .card-value {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* List */
+  .fancy-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .fancy-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .fancy-list li:last-child { border-bottom: none; }
+
+  .fancy-list li::before {
+    content: '—';
+    color: var(--accent);
+    font-weight: 300;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Highlight block */
+  .highlight-block {
+    background: var(--highlight);
+    border: 1px solid rgba(192,132,252,0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .highlight-block p {
+    color: #c4b8e0;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  /* Contact box */
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-top: 20px;
+  }
+
+  .contact-box a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-box a:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .footer-brand {
+    font-family: 'DM Serif Display', serif;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* Section anchor offset */
+  section[id] {
+    scroll-margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="logo-row">
+      <div class="logo-icon">🐱</div>
+      <div class="logo-text">Rhythm<span>Cat</span></div>
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p style="color: var(--muted); font-size: 15px; max-width: 520px; margin-top: 12px;">
+      We believe in being straightforward about how your data is handled. This page explains exactly what we collect, why, and how you stay in control.
+    </p>
+    <div class="header-meta">
+      <span class="badge">Effective: May 12, 2025</span>
+      <span class="badge">Last updated: July 1, 2026</span>
+      <span class="badge">Android</span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#information">Information We Collect</a></li>
+      <li><a href="#usage">How We Use Your Data</a></li>
+      <li><a href="#advertising">Advertising (AdMob)</a></li>
+      <li><a href="#sharing">Sharing &amp; Disclosure</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+      <li><a href="#account-deletion">Data Deletion</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="overview">
+    <p class="section-number">01</p>
+    <h2>Overview</h2>
+    <p>
+      Rhythm Cat is a mobile rhythm game for Android where players tap and interact in sync with music. To provide features like leaderboards and progress tracking, and to show ads, we collect a limited set of information.
+    </p>
+    <p>
+      This Privacy Policy applies to the Rhythm Cat mobile application and describes how we collect, use, store, and protect your data. By using the app, you agree to the practices described here.
+    </p>
+    <div class="highlight-block">
+      <p><strong>The short version:</strong> We collect only what we need to run leaderboards and ads. We do not sell your data. You can request deletion of your leaderboard data at any time.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section id="information">
+    <p class="section-number">02</p>
+    <h2>Information We Collect</h2>
+    <p>We collect the following categories of information when you use Rhythm Cat:</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">👤</div>
+        <div class="card-label">Account Identifier</div>
+        <div class="card-value">A unique ID from Google Play Games sign-in, or an anonymous device ID if you don't sign in. No email address or password is collected.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎮</div>
+        <div class="card-label">Game Data</div>
+        <div class="card-value">The nickname you type, your scores, and completed levels — shown publicly on in-game leaderboards</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <div class="card-label">Device Info</div>
+        <div class="card-value">Device model, OS version, language settings</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📣</div>
+        <div class="card-label">Advertising Data</div>
+        <div class="card-value">Advertising ID, IP address, and ad interaction data, collected via Google AdMob — see the Advertising section below</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <div class="card-label">Usage Data</div>
+        <div class="card-value">Session durations, feature interactions, crash reports</div>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">
+      Rhythm Cat does not offer real-money in-app purchases. Any in-game currency is earned by playing or by watching optional rewarded ads.
+    </p>
+  </section>
+
+  <!-- 3 -->
+  <section id="usage">
+    <p class="section-number">03</p>
+    <h2>How We Use Your Data</h2>
+    <p>Your data is used for the following purposes:</p>
+    <ul class="fancy-list">
+      <li>Identifying your device so your progress and leaderboard entry persist across sessions</li>
+      <li>Saving and syncing your game progress</li>
+      <li>Displaying leaderboards with nicknames and scores</li>
+      <li>Serving ads and measuring ad performance (see Advertising below)</li>
+      <li>Diagnosing bugs, crashes, and performance issues</li>
+      <li>Improving gameplay balance and difficulty tuning based on aggregate usage patterns</li>
+      <li>Complying with legal obligations where required</li>
+    </ul>
+    <p>We do not sell your data to marketing companies. Our only advertising partner is Google AdMob, used to display in-app ads as described below.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="advertising">
+    <p class="section-number">04</p>
+    <h2>Advertising (Google AdMob)</h2>
+    <p>
+      Rhythm Cat shows ads, including optional rewarded ads, using Google AdMob (Google Mobile Ads SDK). AdMob may automatically collect and share the following with Google, for advertising, analytics, and fraud-prevention purposes:
+    </p>
+    <ul class="fancy-list">
+      <li>Advertising ID / App Set ID</li>
+      <li>IP address (used to estimate your general location)</li>
+      <li>Device and ad interaction data</li>
+      <li>Diagnostic and crash information</li>
+    </ul>
+    <p>
+      You can reset or limit ad tracking at any time from your Android device settings (Settings → Privacy → Ads, or Google Settings → Ads). For more information, see
+      <a href="https://policies.google.com/privacy" style="color: var(--accent);">Google's Privacy Policy</a> and
+      <a href="https://policies.google.com/technologies/partner-sites" style="color: var(--accent);">how Google uses data from partner apps</a>.
+    </p>
+  </section>
+
+  <!-- 5 -->
+  <section id="sharing">
+    <p class="section-number">05</p>
+    <h2>Sharing &amp; Disclosure</h2>
+    <p>
+      We do not sell, trade, or rent your personal information. Your nickname and score are visible to other players within the leaderboard feature. Beyond that, we may share your data only in the following limited circumstances:
+    </p>
+    <ul class="fancy-list">
+      <li><strong>Service providers:</strong> Trusted third-party services that help us operate the game (Firebase for leaderboards, Google AdMob for ads). These providers are bound by their own data-processing terms.</li>
+      <li><strong>Legal requirements:</strong> If required to do so by law, court order, or governmental authority.</li>
+      <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or sale of assets, your data may be transferred. We will notify you before your information becomes subject to a different privacy policy.</li>
+      <li><strong>With your consent:</strong> For any other purpose, only with your explicit permission.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section id="security">
+    <p class="section-number">06</p>
+    <h2>Data Security</h2>
+    <p>
+      We rely on Firebase and Google AdMob's platform-standard security practices to protect your data, including:
+    </p>
+    <ul class="fancy-list">
+      <li>Data transmission encrypted via HTTPS/TLS</li>
+      <li>Access to leaderboard data restricted to authorized personnel only</li>
+      <li>Regular security reviews of our systems</li>
+    </ul>
+    <p>
+      While we take reasonable steps to protect your data, no method of transmission or storage is 100% secure.
+    </p>
+  </section>
+
+  <!-- 7 -->
+  <section id="retention">
+    <p class="section-number">07</p>
+    <h2>Data Retention</h2>
+    <p>
+      We retain your leaderboard entry (nickname and score) for as long as it remains linked to your active device/sign-in identifier. If you request deletion, we will permanently erase your personal information within <strong>30 days</strong>, except where we are required to retain it for legal purposes.
+    </p>
+    <p>
+      Anonymized, aggregate analytics data (which cannot identify you) may be retained by Google per its own retention policies.
+    </p>
+  </section>
+
+  <!-- 8 -->
+  <section id="rights">
+    <p class="section-number">08</p>
+    <h2>Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your data:</p>
+    <ul class="fancy-list">
+      <li><strong>Access:</strong> Request a copy of the leaderboard data we hold about you</li>
+      <li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete information</li>
+      <li><strong>Deletion:</strong> Request that we delete your leaderboard entry and identifier</li>
+      <li><strong>Portability:</strong> Receive your data in a structured, machine-readable format</li>
+      <li><strong>Objection:</strong> Object to certain types of processing, such as analytics</li>
+    </ul>
+    <p>
+      To exercise any of these rights, please contact us at the email address listed below. We will respond within 30 days.
+    </p>
+  </section>
+
+  <!-- 9 -->
+  <section id="children">
+    <p class="section-number">09</p>
+    <h2>Children's Privacy</h2>
+    <p>
+      Rhythm Cat is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us and we will delete it promptly.
+    </p>
+    <p>
+      For users between 13 and 18, we encourage parental involvement and oversight of their app usage.
+    </p>
+  </section>
+
+  <!-- 10 -->
+  <section id="changes">
+    <p class="section-number">10</p>
+    <h2>Policy Changes</h2>
+    <p>
+      We may update this Privacy Policy from time to time as the game evolves — for example, when new platforms are supported or new features are added. When we make significant changes, we will note them here with an updated "Last updated" date, and where possible, notify you in-app.
+    </p>
+    <p>
+      Continued use of Rhythm Cat after changes take effect constitutes acceptance of the updated policy.
+    </p>
+  </section>
+
+  <!-- 11 -->
+  <section id="contact">
+    <p class="section-number">11</p>
+    <h2>Contact Us</h2>
+    <p>
+      If you have any questions about this Privacy Policy or how your data is handled, please don't hesitate to reach out.
+    </p>
+    <div class="contact-box">
+      <p style="color: var(--text); font-size: 15px; margin-bottom: 8px;"><strong>Rhythm Cat Support</strong></p>
+      <p style="margin-bottom: 6px;">📧 <a href="mailto:rhythmcatapp@gmail.com">rhythmcatapp@gmail.com</a></p>
+      <p style="font-size: 14px; color: var(--muted); margin-top: 12px;">We aim to respond to all privacy inquiries within 5 business days.</p>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section id="account-deletion">
+    <p class="section-number">12</p>
+    <h2>Data Deletion</h2>
+    <p>
+      You can request the deletion of your leaderboard entry and identifier at any time by contacting us at the email address below. We will process your request within 30 days.
+    </p>
+    <div class="contact-box">
+      <p style="color: var(--text); font-size: 15px; margin-bottom: 8px;"><strong>Request Data Deletion</strong></p>
+      <p style="margin-bottom: 6px;">📧 <a href="mailto:rhythmcatapp@gmail.com">rhythmcatapp@gmail.com</a></p>
+      <p style="font-size: 14px; color: var(--muted); margin-top: 12px;">Please include "Data Deletion Request" in the subject line.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025–2026 <span class="footer-brand">Rhythm Cat</span>. All rights reserved.</p>
+    <p>Android is a trademark of Google LLC.</p>
+  </footer>
+
+</div>
+</body>
+</html>
